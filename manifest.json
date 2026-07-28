@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "PicSpeeder",
+  "version": "1.0.0",
+  "description": "Long-press images to playback video frames and analyze animation speeds.",
+  "permissions": [],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["player.js", "ui.js", "content.js"]
+    }
+  ]
+}
