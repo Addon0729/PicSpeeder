@@ -61,7 +61,7 @@ window.ImagePlayerUI = {
     p.toolbar = toolbar;
     
     // Set a placeholder min-size to make the empty bar look like a sleek loading bar
-    toolbar.style.cssText = `position:absolute; z-index:999999; background:#222; color:#fff; padding:6px 12px; border-radius:6px; box-shadow:0 4px 15px rgba(0,0,0,0.5); display:flex; align-items:center; gap:8px; font-family:sans-serif; font-size:12px; user-select:none; box-sizing:border-box; min-width:180px; min-height:28px; transition: min-width 0.1s ease, min-height 0.1s ease;`;
+    toolbar.style.cssText = `position:absolute; z-index:999999; background:#222; color:#f80; padding:6px 12px; border-radius:6px; box-shadow:0 4px 15px rgba(0,0,0,0.5); display:flex; align-items:center; gap:8px; font-family:sans-serif; font-size:12px; user-select:none; box-sizing:border-box; min-width:180px; min-height:28px; transition: min-width 0.1s ease, min-height 0.1s ease;`;
 
     document.body.appendChild(toolbar);
     toolbar.style.left = posX;
@@ -145,8 +145,8 @@ window.ImagePlayerUI = {
 
     const btnPlay = document.createElement('button');
     btnPlay.innerText = 'PAUSE'; 
-    btnPlay.style.cssText = btnStyle + "width:55px;";
-    btnPlay.onclick = () => { p.isPlaying = !p.isPlaying; if(p.isPlaying){ btnPlay.innerText='PAUSE'; loop(); }else{ btnPlay.innerText='PLAY'; clearTimeout(p.timerId); }};
+      btnPlay.style.cssText = btnStyle + "color:#f80; width:55px;";
+      btnPlay.onclick = () => { p.isPlaying = !p.isPlaying; if (p.isPlaying) { btnPlay.innerText = 'PAUSE'; btnPlay.style.cssText = btnStyle + "color:#f80; width:55px;"; loop(); }else{ btnPlay.innerText='PLAY'; btnPlay.style.cssText = btnStyle + "color:#0f0; width:55px;";clearTimeout(p.timerId); }};
 
     const btnNext = document.createElement('button');
     btnNext.innerText = '▶';
@@ -158,7 +158,7 @@ window.ImagePlayerUI = {
     info.style.cssText = resetBase + "min-width:50px; text-align:center; display:inline-block;";
 
     const totalSpeed = document.createElement('span');
-    totalSpeed.style.cssText = resetBase + "min-width:45px; font-weight:bold; color:#007bff; display:inline-block;";
+    totalSpeed.style.cssText = resetBase + "min-width:45px; font-weight:bold; color:#00ff00; display:inline-block;";
     
     // Updates multiplier tags dynamically
     const upTxt = () => {
@@ -173,7 +173,7 @@ window.ImagePlayerUI = {
     const s1 = document.createElement('input');
     s1.type='range'; s1.min='0.1'; s1.max='2.0'; s1.step='0.05'; s1.value='1.0'; s1.style.cssText = "width:100px; margin:0; padding:0; vertical-align:middle;";
     const v1Span = document.createElement('span');
-    v1Span.style.cssText = resetBase + "min-width:40px; color:#aaa; display:inline-block;";
+    v1Span.style.cssText = resetBase + "min-width:40px; color:#fff; display:inline-block;";
     s1.oninput = (e) => { p.speed1 = parseFloat(e.target.value); upTxt(); };
     s1Cont.append(s1, v1Span);
 
@@ -184,7 +184,7 @@ window.ImagePlayerUI = {
     const steps =[1, 2, 3, 4, 5, 8, 16, 32];
     s2.type='range'; s2.min='0'; s2.max=String(steps.length-1); s2.step='1'; s2.value='0'; s2.style.cssText = "width:50px; margin:0; padding:0; vertical-align:middle;";
     const v2Span = document.createElement('span');
-    v2Span.style.cssText = resetBase + "min-width:25px; color:#aaa; margin-right:4px; display:inline-block;";
+    v2Span.style.cssText = resetBase + "min-width:25px; color:#fff; margin-right:4px; display:inline-block;";
     s2.oninput = (e) => { p.speed2 = steps[parseInt(e.target.value)]; upTxt(); };
     s2Cont.append(s2, v2Span);
 
