@@ -61,7 +61,7 @@ window.ImagePlayerUI = {
     p.toolbar = toolbar;
     
     // Set a placeholder min-size to make the empty bar look like a sleek loading bar
-    toolbar.style.cssText = `position:absolute; z-index:999999; background:#222; color:#f80; padding:6px 12px; border-radius:6px; box-shadow:0 4px 15px rgba(0,0,0,0.5); display:flex; align-items:center; gap:8px; font-family:sans-serif; font-size:12px; user-select:none; box-sizing:border-box; min-width:180px; min-height:28px; transition: min-width 0.1s ease, min-height 0.1s ease;`;
+    toolbar.style.cssText = `position:absolute; z-index:999999; background:#222; color:#fff; padding:6px 12px; border-radius:6px; box-shadow:0 4px 15px rgba(0,0,0,0.5); display:flex; align-items:center; gap:8px; font-family:sans-serif; font-size:12px; user-select:none; box-sizing:border-box; min-width:180px; min-height:28px; transition: min-width 0.1s ease, min-height 0.1s ease;`;
 
     document.body.appendChild(toolbar);
     toolbar.style.left = posX;
@@ -145,8 +145,8 @@ window.ImagePlayerUI = {
 
     const btnPlay = document.createElement('button');
     btnPlay.innerText = 'PAUSE'; 
-      btnPlay.style.cssText = btnStyle + "color:#f80; width:55px;";
-      btnPlay.onclick = () => { p.isPlaying = !p.isPlaying; if (p.isPlaying) { btnPlay.innerText = 'PAUSE'; btnPlay.style.cssText = btnStyle + "color:#f80; width:55px;"; loop(); }else{ btnPlay.innerText='PLAY'; btnPlay.style.cssText = btnStyle + "color:#0f0; width:55px;";clearTimeout(p.timerId); }};
+      btnPlay.style.cssText = btnStyle + "color:#fff; width:55px;";
+      btnPlay.onclick = () => { p.isPlaying = !p.isPlaying; if (p.isPlaying) { btnPlay.innerText = 'PAUSE'; btnPlay.style.cssText = btnStyle + "color:#fff; width:55px;"; loop(); }else{ btnPlay.innerText='PLAY'; btnPlay.style.cssText = btnStyle + "color:#fff; width:55px;";clearTimeout(p.timerId); }};
 
     const btnNext = document.createElement('button');
     btnNext.innerText = '▶';
