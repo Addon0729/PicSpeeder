@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="banner.jpg" width="600" alt="PicSpeeder Banner">
+</p>
 # PicSpeeder 🚀
 
 A Chrome Extension to control image animation frames and adjust playback speed via simple long-press gestures.
